@@ -1,4 +1,4 @@
-package com.oliverworks.testsapp.ui.home
+package com.oliverworks.testsapp.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,19 +8,18 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.oliverworks.testsapp.R
 
-class HomeFragment : Fragment() {
+class SavedFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var savedViewModel: SavedViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        savedViewModel = ViewModelProvider(this).get(SavedViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_saved, container, false)
 
-        return root
+        return view
     }
 }
